@@ -28,12 +28,15 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-tomcat")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("com.google.code.gson:gson:2.8.0")
     compile("org.hibernate:hibernate-core:5.2.9.Final")
     compile("mysql:mysql-connector-java")
     compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-context', version: '1.0.0.RELEASE'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-jdbc', version: '1.0.0.RELEASE'
+    compile("commons-dbcp:commons-dbcp")
     testCompile("junit:junit")
 }
