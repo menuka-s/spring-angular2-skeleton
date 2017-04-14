@@ -13,8 +13,8 @@ export class UserService {
   findAllUsers(): Observable<Array<User>> {
     return this.http.get('/api/users')
       .map((response: Response) => response.json())
-      .map((data: Array<User>) => {
-        return data;
+      .map((data: any) => {
+        return data._embedded.users as User[];
       });
   }
 }
