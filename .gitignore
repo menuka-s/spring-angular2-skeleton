@@ -15,3 +15,6 @@ gradle-app.setting
 
 # Hide credentials
 application.properties
+
+node_modules
+dist
