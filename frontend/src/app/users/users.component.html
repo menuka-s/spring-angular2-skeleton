@@ -4,3 +4,11 @@
 <div *ngFor="let user of users">
   {{user.name}}
 </div>
+
+<br><br>
+
+<label>New User:</label>
+<input placeholder="Name" #newName />
+<button (click)="addUser(newName.value); newName.value=''">Add User</button>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>

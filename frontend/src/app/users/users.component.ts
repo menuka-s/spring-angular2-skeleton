@@ -9,6 +9,7 @@ import { UserService } from './user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  errorMessage: string;
   users: User[];
 
   constructor(private userService: UserService) {
@@ -18,6 +19,14 @@ export class UsersComponent implements OnInit {
    this.userService.findAllUsers().subscribe((data: Array<User>) => {
      this.users = data;
    });
+  }
+
+  addUser(name: string){
+    this.userService.createUser(name)
+      .subscribe(
+        user => this.users.push(user),
+        error => this.errorMessage = <any>error
+      );
   }
 
 }

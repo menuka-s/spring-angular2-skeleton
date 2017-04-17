@@ -18,3 +18,5 @@ application.properties
 
 node_modules
 dist
+
+.idea/

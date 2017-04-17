@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { User } from './user.model';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
@@ -17,4 +17,17 @@ export class UserService {
         return data._embedded.users as User[];
       });
   }
+
+  createUser(name: string): Observable<User> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post('/api/users', { name }, options)
+      .map(this.extractData);
+  }
+
+  private extractData(res: Response) {
+      let body = res.json();
+      return body.data || { };
+    }
 }
