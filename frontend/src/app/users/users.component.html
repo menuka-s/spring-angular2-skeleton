@@ -5,6 +5,24 @@
   {{user.name}}
 </div>
 
+<!--<div *ngFor="let pick of picklist">-->
+  <!--{{pick.subject}}-->
+<!--</div>-->
+
+<br><br>
+
+
+<form >
+    <select #test>
+      <option *ngFor="let pick of picklist"
+              [value]="pick.pickId" >
+        {{pick.subject}}
+      </option>
+
+    </select>
+    <button (click)="testfunction(test.value);">submit</button>
+</form>
+
 <br><br>
 
 <label>New User:</label>

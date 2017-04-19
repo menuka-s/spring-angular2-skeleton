@@ -18,12 +18,11 @@ public class User {
     @Column(name="name")
     private String name;
 
-    public User(){}
+    @Column(name="is_true")
+    private boolean isTrue;
 
-    public User(int id, String name){
-        this.id = id;
-        this.name = name;
-    }
+    @Column(name="some_number")
+    private int someNumber;
 
     public int getId(){
         return this.id;
@@ -39,5 +38,21 @@ public class User {
 
     public void setName(String name){
         this.name = name;
+    }
+
+    public boolean getIsTrue(){
+        return this.isTrue;
+    }
+
+    public void setIsTrue(boolean isTrue){
+        this.isTrue = isTrue;
+    }
+
+    public int getSomeNumber(){
+        return this.someNumber;
+    }
+
+    public void setSomeNumber(int someNumber){
+        this.someNumber = someNumber;
     }
 }
