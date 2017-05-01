@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Add user</h1>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="addUser(myForm.value)">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
+    </div>
+    <div class="form-group">
+      <label for="">Is true?</label>
+      <input type="checkbox" class="form-control" formControlName="isTrue">
+      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
+    </div>
+    <div class="form-group">
+      <label for="">Some Number</label>
+      <input type="number" class="form-control" formControlName="someNumber">
+      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="margin-20">
+      <div>myForm details:-</div>
+      <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+      <pre>Is myForm submitted?: <br>{{submitted | json}}</pre>
+      <pre>myForm value: <br>{{myForm.value | json}}</pre>
+    </div>
+    <div class="margin-20">
+      Form changes:
+    </div>
+    <div *ngFor="let event of events" class="margin-20">
+      <pre> {{ event | json }} </pre>
+    </div>
+  </form>
+</div>

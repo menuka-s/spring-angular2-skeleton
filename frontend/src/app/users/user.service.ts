@@ -18,11 +18,13 @@ export class UserService {
       });
   }
 
-  createUser(name: string): Observable<User> {
+  createUser(myObj: string): Observable<User> {
+    var myJsonObj = JSON.stringify(myObj)
+
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post('/api/users', { name }, options)
+    return this.http.post('/api/users', myJsonObj, options)
       .map(this.extractData);
   }
 
