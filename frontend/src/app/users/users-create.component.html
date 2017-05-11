@@ -1,23 +1,49 @@
 <div class="container">
   <h1>Add user</h1>
-  <form [formGroup]="myForm" novalidate (ngSubmit)="addUser(myForm.value)">
-    <div class="form-group">
-      <label for="">Name</label>
-      <input type="text" class="form-control" formControlName="name">
-      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
-    </div>
-    <div class="form-group">
-      <label for="">Is true?</label>
-      <input type="checkbox" class="form-control" formControlName="isTrue">
-      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
-    </div>
-    <div class="form-group">
-      <label for="">Some Number</label>
-      <input type="number" class="form-control" formControlName="someNumber">
-      <!--<pre class="margin-20">{{ myForm.controls.name.errors | json }}</pre>-->
+  <form [formGroup]="myForm" novalidate (ngSubmit)="addUser(myForm.value)" class="container">
+    <div class="grid">
+      <div class = row>
+        <div class="form-group col-sm-3">
+          <md-input-container>
+            <input placeholder="Name" mdInput type="text" class="form-control" formControlName="name">
+          </md-input-container>
+        </div>
+        <div class="form-group col-sm-3">
+          <md-checkbox class="form-control" formControlName="isTrue">Is True?</md-checkbox>
+        </div>
+        <div class="form-group col-sm-3">
+          <md-input-container>
+            <input mdInput type="number" placeholder="Some Number" class="form-control" formControlName="someNumber">
+          </md-input-container>
+        </div>
+        <br>
+        <div class="form-group col-sm-6">
+            <md-select placeholder="Test Select"  class="form-control" formControlName="testSelect">
+              <md-option *ngFor="let pick of picklist"
+                      [value]="pick.pickId" >
+                {{pick.subject}}
+              </md-option>
+            </md-select>
+        </div>
+        <br><br>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-addon" (click)="d.toggle()" >
+                <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
+
+    <br><br>
     <button type="submit" class="btn btn-default">Submit</button>
+    <br><br>
     <div class="margin-20">
       <div>myForm details:-</div>
       <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>

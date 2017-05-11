@@ -12,21 +12,10 @@
 <br><br>
 
 
-<form >
-    <select #test>
-      <option *ngFor="let pick of picklist"
-              [value]="pick.pickId" >
-        {{pick.subject}}
-      </option>
 
-    </select>
-    <button (click)="testfunction(test.value);">submit</button>
-</form>
 
 <br><br>
 
-<label>New User:</label>
-<input placeholder="Name" #newName />
-<button (click)="addUser(newName.value); newName.value=''">Add User</button>
+<a routerLink="/add" routerLinkActive="active">Add</a>
 
 <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>

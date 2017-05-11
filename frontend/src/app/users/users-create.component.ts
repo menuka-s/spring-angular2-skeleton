@@ -34,7 +34,8 @@ export class UsersCreateComponent implements OnInit {
    this.myForm = this._fb.group({
     name: [''],
     isTrue:[''],
-    someNumber:['']
+    someNumber:[''],
+    testSelect:['']
    })
 
    this.subscribeToFormChanges();
@@ -50,6 +51,7 @@ export class UsersCreateComponent implements OnInit {
   }
 
   addUser(myObj: string){
+    debugger
     this.userService.createUser(myObj)
       .subscribe(
         user => this.users.push(user),
@@ -57,7 +59,7 @@ export class UsersCreateComponent implements OnInit {
       );
   }
 
-  testfunction(stuff: string){
+  testFunction(data: any){
     debugger
   }
 

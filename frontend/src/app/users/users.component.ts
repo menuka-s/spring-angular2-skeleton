@@ -36,8 +36,4 @@ export class UsersComponent implements OnInit {
       );
   }
 
-  testfunction(stuff: string){
-    debugger
-  }
-
 }

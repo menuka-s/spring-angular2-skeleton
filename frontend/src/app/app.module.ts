@@ -4,6 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdInputModule, MdCheckboxModule, MdSelectModule } from '@angular/material';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -25,7 +29,12 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MdInputModule,
+    MdCheckboxModule,
+    MdSelectModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
