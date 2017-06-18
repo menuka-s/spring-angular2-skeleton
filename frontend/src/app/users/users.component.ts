@@ -5,6 +5,8 @@ import { UserService } from './user.service';
 import { Picklist } from '../picklist/picklist.model';
 import { PicklistService } from '../picklist/picklist.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-users',
   providers: [UserService, PicklistService],
@@ -16,10 +18,11 @@ export class UsersComponent implements OnInit {
   users: User[];
   picklist: Picklist[];
 
-  constructor(private userService: UserService, private picklistService: PicklistService) {
+  constructor(private userService: UserService, private picklistService: PicklistService, private router: Router) {
   }
 
   ngOnInit(): void {
+    debugger
    this.userService.findAllUsers().subscribe((data: Array<User>) => {
      this.users = data;
    });

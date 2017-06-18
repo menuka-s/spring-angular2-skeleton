@@ -14,7 +14,7 @@ import { UsersComponent } from './users/users.component';
 import { UsersCreateComponent } from './users/users-create.component';
 
 const appRoutes: Routes = [
-  { path: 'add', component: UsersCreateComponent }
+  { path: 'add', component: UsersCreateComponent },
 ];
 
 @NgModule({

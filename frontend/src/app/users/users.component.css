@@ -14,3 +14,29 @@
 .input-group-addon {
   background-color: #ffffff;
 }
+
+.test-container {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease-out;
+}
+
+.img-container{
+  width: 100%;
+  height: auto;
+  background-color: black;
+  z-index: 0;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.carousel-caption {
+  z-index: 3;
+  top: 45%;
+
+}

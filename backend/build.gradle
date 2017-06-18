@@ -40,4 +40,8 @@ dependencies {
     compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-jdbc', version: '1.0.0.RELEASE'
     compile("commons-dbcp:commons-dbcp")
     testCompile("junit:junit")
+
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-web")
+
 }

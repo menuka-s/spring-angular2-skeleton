@@ -1,15 +1,15 @@
-<h4>Users:</h4>
 
 
-<div *ngFor="let user of users">
-  {{user.name}}
+<!-- <div *ngFor="let user of users">
+{{user.name}}
+</div> -->
+
+<div *ngFor="let pick of picklist">
+{{pick.subject}}
 </div>
 
-<!--<div *ngFor="let pick of picklist">-->
-  <!--{{pick.subject}}-->
-<!--</div>-->
-
-<br><br>
+<button md-button [routerLink]="['/add']">Add</button>
+<!-- <br><br>
 
 
 
@@ -18,4 +18,46 @@
 
 <a routerLink="/add" routerLinkActive="active">Add</a>
 
-<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p> -->
+<!-- <ngb-carousel class="container">
+  <ng-template ngbSlide class="test-container">
+    <div class="img-container">
+      <img class="img" src="https://lorempixel.com/900/500?r=1" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide class="test-container">
+    <div class="img-container">
+      <img class="img" src="https://lorempixel.com/900/500?r=2" alt="Random second slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide class="test-container">
+    <div class="img-container">
+      <img class="img" src="https://lorempixel.com/900/500?r=3" alt="Random third slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel> -->
+
+
+<!-- <div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form> -->

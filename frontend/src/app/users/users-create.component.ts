@@ -7,6 +7,9 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { Picklist } from '../picklist/picklist.model';
 import { PicklistService } from '../picklist/picklist.service';
 
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-users-create',
   providers: [UserService, PicklistService],
@@ -21,7 +24,7 @@ export class UsersCreateComponent implements OnInit {
   users: User[];
   picklist: Picklist[];
 
-  constructor(private userService: UserService, private picklistService: PicklistService, private _fb: FormBuilder) {
+  constructor(private userService: UserService, private picklistService: PicklistService, private _fb: FormBuilder, private route: Router) {
   }
 
   ngOnInit(): void {
@@ -51,7 +54,7 @@ export class UsersCreateComponent implements OnInit {
   }
 
   addUser(myObj: string){
-    debugger
+
     this.userService.createUser(myObj)
       .subscribe(
         user => this.users.push(user),
@@ -60,7 +63,7 @@ export class UsersCreateComponent implements OnInit {
   }
 
   testFunction(data: any){
-    debugger
+
   }
 
 }
