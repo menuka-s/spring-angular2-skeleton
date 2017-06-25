@@ -36,12 +36,17 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.hibernate:hibernate-core:5.2.9.Final")
     compile("mysql:mysql-connector-java")
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-context', version: '1.0.0.RELEASE'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-jdbc', version: '1.0.0.RELEASE'
     compile("commons-dbcp:commons-dbcp")
     testCompile("junit:junit")
 
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-context', version: '1.0.0.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-aws-jdbc', version: '1.0.0.RELEASE'
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+
+
+//    compile('com.spring-boot-starter-amazon-s3')
+
+//    compile("org.springframework.boot:spring-boot-starter-security")
+//    compile("org.springframework.boot:spring-boot-starter-web")
 
 }
